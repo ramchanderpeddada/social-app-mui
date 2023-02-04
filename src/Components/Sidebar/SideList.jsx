@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const SideList = () => {
+const SideList = ({ mode, setMode }) => {
   const sideList = [
     {
       name: "Homepage",
@@ -52,7 +52,11 @@ const SideList = () => {
       icon: <ModeNight />,
     },
     {
-      icon: <Switch />,
+      icon: (
+        <Switch
+          onChange={(e) => setMode(mode === "light" ? "dark" : "light")}
+        />
+      ),
     },
   ];
   return (
